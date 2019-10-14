@@ -35,7 +35,6 @@ artifacts:
     - scripts/*
     - src/main/resources/application.properties
     - src/main/resources/import.sql
-  discard-paths: yes
 cache:
   paths:
     - '/root/.m2/**/*'
