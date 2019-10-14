@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -26,9 +28,11 @@ public class Survey {
 	@Column(name = "survey_id")
 	private Long surveyId;
 
+	@JsonProperty(value = "surveyName")
 	@Column(name = "survey_name")
 	private String surveyName;
 
+	@JsonProperty(value = "surveyDescription")
 	@Column(name = "survey_description")
 	private String surveyDescription;
 
@@ -38,9 +42,11 @@ public class Survey {
 	@Column(name = "creation_date")
 	private String creationDate;
 
+	@JsonProperty(value = "creatorId")
 	@Column(name = "creator_id")
 	private String creatorId;
 
+	@JsonProperty(value = "questions")
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "survey", cascade = CascadeType.PERSIST)
 	private List<Question> questions;
 

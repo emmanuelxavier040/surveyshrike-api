@@ -32,6 +32,9 @@ artifacts:
   files:
     - target/surveyshrike-api-0.0.1-SNAPSHOT.jar
     - appspec.yml
+    - scripts/*
+    - src/main/resources/application.properties
+    - src/main/resources/import.sql
   discard-paths: yes
 cache:
   paths:

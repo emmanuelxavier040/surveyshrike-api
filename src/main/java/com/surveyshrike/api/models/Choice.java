@@ -11,6 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -26,6 +27,7 @@ public class Choice {
 	@Column(name = "choice_id")
 	private Long choiceId;
 
+	@JsonProperty(value = "choiceValue")
 	@Column(name = "choice_value")
 	private String choiceValue;
 
