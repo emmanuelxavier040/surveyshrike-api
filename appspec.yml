@@ -7,7 +7,7 @@ files:
     destination: /tmp
   - source: ./import.sql
     destination: /tmp
-  - source: ./start_application
+  - source: ./start_application.sh
     destination: /tmp
 hooks:
   ApplicationStart:
