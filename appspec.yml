@@ -10,5 +10,5 @@ files:
   - source: /scripts/start_application.sh
     destination: /tmp
 hooks:
-  ApplicationStart:
+  AfterInstall:
     - location: scripts/start_application.sh
