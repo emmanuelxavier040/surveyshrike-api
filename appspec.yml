@@ -2,11 +2,11 @@ version: 0.0
 os: linux
 files:
   - source: ./surveyshrike-api-0.0.1-SNAPSHOT.jar
-    destination: ./
+    destination: /tmp
   - source: ./application.properties
-    destination: ./
+    destination: /tmp
   - source: ./import.sql
-    destination: ./
+    destination: /tmp
 hooks:
   ApplicationStart:
     - location: scripts/start_application
