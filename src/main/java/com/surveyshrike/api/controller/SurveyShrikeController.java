@@ -1,11 +1,11 @@
 package com.surveyshrike.api.controller;
 
-import java.io.Console;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,6 +18,7 @@ import com.surveyshrike.api.models.Survey;
 import com.surveyshrike.api.services.SurveyService;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/api/v1")
 public class SurveyShrikeController {
 
@@ -45,6 +46,13 @@ public class SurveyShrikeController {
 	
 	@PostMapping(path = "/create-choice", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public Survey createChoice(@RequestBody Choice choice) {
+//		return surveyService.createSurvey(survey);
+		return null;
+
+	}
+	
+	@PostMapping(path = "/take-survey", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public Survey takeSurvey(@RequestBody Choice choice) {
 //		return surveyService.createSurvey(survey);
 		return null;
 

@@ -17,6 +17,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.surveyshrike.api.constants.AnswerType;
 
 import lombok.Getter;
@@ -33,16 +34,20 @@ public class Question {
 	@Column(name = "question_id")
 	private Long questionId;
 
+	@JsonProperty(value = "orderNumber")
 	@Column(name = "order_number")
 	private Long orderNumber;
 
+	@JsonProperty(value = "questionText")
 	@Column(name = "question_text")
 	private String questionText;
 
+	@JsonProperty(value = "answerType")
 	@Enumerated(EnumType.STRING)
 	@Column(name = "answer_type")
 	private AnswerType answerType;
 
+	@JsonProperty(value = "placeholder")
 	@Column(name = "placeholder")
 	private String placeholder;
 
