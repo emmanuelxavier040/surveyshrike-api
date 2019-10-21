@@ -26,33 +26,44 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "questions")
-public class Question {
-
+@Table(name = "responses")
+public class SurveyResponse {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "question_id")
-	private Long questionId;
+	@Column(name = "response_id")
+	private Long responseId;
 
-	@JsonProperty(value = "orderNumber")
-	@Column(name = "order_number")
-	private Long orderNumber;
+	@JsonProperty(value = "userId")
+	@Column(name = "user_id")
+	private String userId;
+	
+	@JsonProperty(value = "userFirstName")
+	@Column(name = "user_firstname")
+	private String userFirstName;
+		
+	@JsonProperty(value = "surveyId")
+	@Column(name = "survey_id")
+	private Long surveyId;
+	
+	@JsonProperty(value = "responseText")
+	@Column(name = "response_text")
+	private String responseText;
 
-	@JsonProperty(value = "questionText")
-	@Column(name = "question_text")
-	private String questionText;
+	public String getUserId() {
+		return userId;
+	}
 
-	@JsonProperty(value = "answerType")
-	@Enumerated(EnumType.STRING)
-	@Column(name = "answer_type")
-	private AnswerType answerType;
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
 
-	@JsonProperty(value = "placeholder")
-	@Column(name = "placeholder")
-	private String placeholder;
+	public String getUserFirstName() {
+		return userFirstName;
+	}
 
-	@JsonProperty(value = "choices")
-	@Column(name = "choices")
-	private String choices;
-
+	public void setUserFirstName(String userFirstName) {
+		this.userFirstName = userFirstName;
+	}
+	
 }

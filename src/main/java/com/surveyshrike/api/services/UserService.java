@@ -10,4 +10,6 @@ public interface UserService {
 	User signUp(User user) throws UserServiceException;
 
 	List<User> findAll() throws UserServiceException;
+	
+	User loginUser(User user) throws UserServiceException;
 }

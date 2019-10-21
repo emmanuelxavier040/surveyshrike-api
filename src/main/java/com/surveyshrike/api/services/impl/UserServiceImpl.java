@@ -32,4 +32,15 @@ public class UserServiceImpl implements UserService {
 		return users;
 	}
 
+	@Override
+	public User loginUser(User user) throws UserServiceException {
+		User userloggedIn = null;
+		try {
+			userloggedIn = userDAO.login(user);
+		} catch (Exception exception) {
+			throw new UserServiceException(exception);
+		}
+		return userloggedIn;
+	}
+
 }

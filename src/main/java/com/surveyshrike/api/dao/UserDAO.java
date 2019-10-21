@@ -8,4 +8,6 @@ import com.surveyshrike.api.models.User;
 public interface UserDAO {
 
 	List<User> findAll() throws UserDAOException;
+	
+	User login(User user) throws UserDAOException;
 }

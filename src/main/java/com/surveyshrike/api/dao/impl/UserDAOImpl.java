@@ -27,4 +27,18 @@ public class UserDAOImpl implements UserDAO {
 		return users;
 	}
 
+	@Override
+	public User login(User user) throws UserDAOException {
+		User userLoggedIn = null;
+		try {			
+			if(!userRepository.existsById(user.getEmail())) {
+				userLoggedIn = (User) userRepository.save(user);
+			}
+			userLoggedIn = user;
+		} catch (Exception exception) {
+			throw new UserDAOException(exception);
+		}
+		return userLoggedIn;
+	}
+
 }
